@@ -5,7 +5,7 @@ export default function Errorpage(){
     return(
         <div>
             <h1> Error, you should not land here </h1>
-            <Link to="/Dashboard/Main">get back to HOME</Link>
+            <Link to="Login">get back to HOME</Link>
         </div>
     )
 
