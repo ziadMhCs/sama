@@ -34,7 +34,7 @@ const ProtectedRoute = ({ element }) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/Login" />, // Redirect to Login on root path
+    element: <AdminLogin/>, // Redirect to Login on root path
     errorElement: <ProtectedRoute element={<Errorpage />} />,
 
   },
