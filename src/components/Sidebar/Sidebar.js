@@ -25,7 +25,7 @@ const Sidebar = () => {
         localStorage.removeItem('admin_token');
         // alert("you are logeed out")
         // Redirect to AdminLogin
-        navigate('/Login');
+        navigate('/');
       } else {
         // Handle error case
         const data = await response.json();

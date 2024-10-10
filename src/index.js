@@ -23,19 +23,19 @@ import UsingTokenExample from './UsingTokenExample';
 import ChartView from './components/Charts_QUSSAY/ChartView';
 import Errorpage from './ErrorPage';
 
-const ProtectedRoute = ({ element }) => {
-  const token = localStorage.getItem('admin_token');
+// const ProtectedRoute = ({ element }) => {
+//   const token = localStorage.getItem('admin_token');
 
-  // Check if token exists
-  return token ? element : <Navigate to="/Login" />;
-};
+//   // Check if token exists
+//   return token ? element : <Navigate to="Login" />;
+// };
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AdminLogin/>, // Redirect to Login on root path
-    errorElement: <ProtectedRoute element={<Errorpage />} />,
+    // errorElement: <ProtectedRoute element={<Errorpage />} />,
 
   },
   {
@@ -44,27 +44,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "Decisions",
-        element: <ProtectedRoute element={<Decisions/>} />,
+        element: <Decisions/>,
       },
       {
         path: "Complaints",
-        element: <ProtectedRoute element={<Complaints_Dashboard />} />,
+        element:<Complaints_Dashboard />,
       },
       {
         path: "Content",
-        element: <ProtectedRoute element={<Content />} />,
+        element:<Content />,
       },
       {
         path: "Aboutus",
-        element: <ProtectedRoute element={<Aboutus />} />,
+        element:<Aboutus />,
       },
       {
         path: "Services",
-        element: <ProtectedRoute element={<Services />} />,
+        element:<Services/>,
       },
       {
         path: "Events",
-        element: <ProtectedRoute element={<Events />} />,
+        element: <Events/>,
       },
       {
         path: "Main",
@@ -76,22 +76,24 @@ const router = createBrowserRouter([
       }
     ],
   },
-  {
-    path: "/Login",
-    element: <AdminLogin />,
-  },
+  // {
+  //   path: "Login",
+  //   element: <AdminLogin />,
+  // },
+
+
+
   // {
   //   path: "*",
   //   element: <AdminLogin />,
   // },
 
-]);
+],{ basename: '/sama' });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
     <RouterProvider router={router}  />
-
 
 </React.StrictMode>
 );
